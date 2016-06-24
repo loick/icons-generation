@@ -1,0 +1,17 @@
+{
+  "name": "dm-icons",
+  "version": "1.0.0",
+  "description": "Generation of the icons from a svg folder",
+  "author": "Loick Le Digabel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^7.0.5",
+    "path": "^0.12.7",
+    "webfonts-generator": "^0.3.5"
+  }
+}

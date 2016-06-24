@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>Dailymotion Fonticons</title>
+        <link href='https://fonts.googleapis.com/css?family=Hind:400,600' rel='stylesheet' type='text/css'>
+        <style>{{{styles}}}</style>
+        <style>
+            *{ box-sizing: border-box; }
+
+            body, html{ padding:0;margin:0;  }
+
+            ul{
+                font-size:16px;
+                padding: 0 5vw;
+            }
+
+            li {
+                position:relative;
+                list-style: none;
+                float:left;
+                width:10vw;
+                height:10vw;
+                border: solid 1px #CCC;
+                text-align: center;
+            }
+
+            ul.bold span{ font-weight:600;  }
+
+            ul.list li
+            {
+                border: none;
+                float: none;
+                width: 100vw;
+                height: inherit;
+                text-align: left;
+                margin-bottom: 5px;
+            }
+
+            ul.list div{ position:relative;top:0;left:0;transform:none; }
+
+            ul.list span{ display:inline-block;margin:0;vertical-align: middle; }
+
+            div {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform: translate(-50%, -50%);
+            }
+
+            span
+            {
+                margin-top: 5px;
+                display: block;
+                font-family: 'Hind';
+                font-weight: 400;
+                line-height: 1;
+            }
+        </style>
+        <script type="text/javascript">
+            function load() {
+                var fontSize = document.getElementById('font');
+                var bold = document.getElementById('bold');
+                var list = document.getElementById('list');
+
+                fontSize.addEventListener('change',function(event)
+                {
+                    document.querySelector('ul').style.fontSize = event.target.value + 'px';
+                });
+
+                bold.addEventListener('change',function(event)
+                {
+                    document.querySelector('ul').classList.toggle('bold');
+                });
+
+                list.addEventListener('change',function(event)
+                {
+                    document.querySelector('ul').classList.toggle('list');
+                });
+            }
+        </script>
+    </head>
+    <body onload="load();">
+        <h1>{{fontName}}</h1>
+        <h2>Display List: <input type="checkbox" id="list" /></h2>
+        <h2>Font-size: <input type="number" id="font" value="16" /></h2>
+        <h2>Hind SemiBold: <input type="checkbox" id="bold" /></h2>
+        <ul class="list">
+            {{#each names}}
+                <li>
+                    <div>
+                        <i class="icon icon-{{this}}"></i>
+                        <span>{{this}}</span>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </body>
+</html>
